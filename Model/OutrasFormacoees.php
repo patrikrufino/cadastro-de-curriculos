@@ -6,7 +6,7 @@
  * 05/2021
 */
 
-class OutrasFormações
+class OutrasFormacoes
 {
     private $id;
     private $idusuario;
@@ -84,7 +84,7 @@ class OutrasFormações
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "INSERT INTO OutrasFormações (idusuario, inicio, fim, descricao) VALUES 
+        $sql = "INSERT INTOco (idusuario, inicio, fim, descricao) VALUES 
         (
             '" . $this->idusuario . "',
             '" . $this->inicio . "',
@@ -113,7 +113,7 @@ class OutrasFormações
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "DELETE FROM OutrasFormações WHERE idOutrasFormações = '" . $id . "';";
+        $sql = "DELETE FROMco WHERE ico = '" . $id . "';";
 
         if ($conn->query($sql) === true) {
             $conn->close();
@@ -135,7 +135,7 @@ class OutrasFormações
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM OutrasFormações WHERE idusuario = '" . $idusuario . "'";
+        $sql = "SELECT * FROMco WHERE idusuario = '" . $idusuario . "'";
         $re = $conn->query($sql);
         $conn->close();
         return $re;
