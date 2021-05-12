@@ -84,7 +84,7 @@ class OutrasFormacoes
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "INSERT INTOco (idusuario, inicio, fim, descricao) VALUES 
+        $sql = "INSERT INTO outrasformacoes (idusuario, inicio, fim, descricao) VALUES 
         (
             '" . $this->idusuario . "',
             '" . $this->inicio . "',
@@ -113,7 +113,7 @@ class OutrasFormacoes
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "DELETE FROMco WHERE ico = '" . $id . "';";
+        $sql = "DELETE FROM outrasformacoes WHERE id = '" . $id . "';";
 
         if ($conn->query($sql) === true) {
             $conn->close();
@@ -135,7 +135,7 @@ class OutrasFormacoes
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROMco WHERE idusuario = '" . $idusuario . "'";
+        $sql = "SELECT * FROM outrasformacoes WHERE idusuario = '" . $idusuario . "'";
         $re = $conn->query($sql);
         $conn->close();
         return $re;
