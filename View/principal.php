@@ -90,6 +90,61 @@
                 </div>
             </form>
         </div>
+
+        <!--Formação Acadêmica-->
+        <div class="w3-padding-128 w3-content w3-text-grey" id="formacao">
+            <h2 class="w3-text-cyan">
+                Formação
+            </h2>
+
+            <form action="" method="POST" class="w3-row w3-light-grey w3-text-blue w3-margin" style="width: 70%;">
+                <div class="w3-row w3-center">
+                    <div class="w3-col" style="width: 50%;">
+                        Data Inicial
+                    </div>
+                    <div class="w3-rest">
+                        Data Final
+                    </div>
+                </div>
+                <div class="w3-row w3-section">
+                    <div class="w3-row w3-section w3-col" style="width: 45%;">
+                        <div class="w3-col" style="width: 15%;">
+                            <i class="w3-xxlarge fa fa-calendar"></i>
+                        </div>
+                        <div class="w3-rest">
+                            <input type="date" name="txtInicioFA" class="w3-input w3-border w3-round-large">
+                        </div>
+                    </div>
+
+                    <div class="w3-row w3-section w3-rest">
+                        <div class="w3-col w3-margin-left" style="width: 13%;">
+                            <i class="w3-xxlarge fa fa-calendar"></i>
+                        </div>
+                        <div class="w3-rest">
+                            <input type="date" name="txtFimFA" class="w3-input w3-border w3-round-large">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:7%">
+                        <i class="w3-xxlarge fa fa-align-justfy"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input type="text" name="txtDescFa" placeholder="Descrição: Ex.: Técnico em Desenvolvimento de Sistemas - Centro Paula Souza" class="w3-input w3-border w3-round-large">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section">
+                    <div class="w3-center">
+                        <button class="w3-button w3-block w3-blue w3-cell w3-round-large" style="width: 20%;">
+                            <i class="w3-xxlarge fa fa-user-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
 </body>
 
