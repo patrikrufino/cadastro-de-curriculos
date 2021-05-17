@@ -32,7 +32,7 @@
 
     <!--Tela de Exibição-->
 
-    <div class="w3-padding-large" id="main">
+    <div class="w3-padding-large exibicao" id="main">
 
         <!--Tela Principal-->
         <header class="w3-container w3-padding-32 w3-center" id="home">
@@ -42,7 +42,7 @@
         </header>
 
         <!--Dados Pessoais-->
-        <div class="w3-padding-32 w3-content w3-text-grey w3-container" id="dPessoais">
+        <div class="w3-padding-128 w3-content w3-text-grey" id="dPessoais">
             <h2 class="w3-text-cyan">Dados Pessoais</h2>
             <form action="" method="post" class="w3-row w3-light-grey w3-text-blue w3-margin" style="width: 70%">
                 <div class="w3-row w3-section">
@@ -143,8 +143,21 @@
                     </div>
                 </div>
             </form>
-        </div>
 
+            <!--Tabela de exibição das Formações Acadêmicas-->
+            <div class="w3-container">
+                <table class="w3-table-all w3-centered">
+                    <thead>
+                        <tr class="w3-center w3-blue">
+                            <th>Início</th>
+                            <th>Fim</th>
+                            <th>Descrição</th>
+                            <th>Apagar</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 
