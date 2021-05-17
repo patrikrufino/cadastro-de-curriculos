@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .center-elements {
     display: flex;
     flex-direction: column;
@@ -25,4 +30,9 @@ h6 {
 
 .exibicao {
     margin-left: 120px;
+}
+
+.title-section {
+    font-weight: bold;
+    margin: 50px;
 }
