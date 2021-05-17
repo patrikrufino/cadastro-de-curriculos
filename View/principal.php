@@ -13,6 +13,8 @@
 </head>
 
 <body class="w3-light-grey">
+
+    <!--Navbar-->
     <nav class="w3-sidebar w3-bar block w3-center w3-blue">
         <a href="#home" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
             <i class="fa fa-home w3-xxlarge"></i>
@@ -28,7 +30,67 @@
         </a>
     </nav>
 
-    <div class="w3-padding-large" id="main"> </div>
+    <!--Tela de Exibição-->
+
+    <div class="w3-padding-large" id="main">
+
+        <!--Tela Principal-->
+        <header class="w3-container w3-padding-32 w3-center" id="home">
+            <h1>
+                <img src="../Resources/Img/enlatados.png" alt="Logo" class="w3-image">
+            </h1>
+        </header>
+
+        <!--Dados Pessoais-->
+        <div class="w3-padding-32 w3-content w3-text-grey w3-container" id="dPessoais">
+            <h2 class="w3-text-cyan">Dados Pessoais</h2>
+            <form action="" method="post" class="w3-row w3-light-grey w3-text-blue w3-margin" style="width: 70%">
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:11%">
+                        <i class="w3-xxlarge fa fa-user center-elements"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input type="text" class="w3-input w3-border w3-round-large" name="txtNome" placeholder="Nome Completo">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:11%">
+                        <i class="w3-xxlarge fa fa-calendar center-elements"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input type="date" class="w3-input w3-border w3-round-large" name="txtData" placeholder="">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:11%">
+                        <i class="w3-xxlarge fa fa-drivers-license center-elements"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input type="text" class="w3-input w3-border w3-round-large" name="txtCPF" placeholder="CPF: 33333333333">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:11%">
+                        <i class="w3-xxlarge fa fa-envelope-o center-elements"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input type="email" class="w3-input w3-border w3-round-large" name="txtEmail" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="w3-ro w3 section">
+                    <div class="w3-center">
+                        <button style="width:90%" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large">
+                            Atualizar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
