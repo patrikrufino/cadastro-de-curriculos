@@ -16,27 +16,31 @@
 <body class="w3-light-grey">
 
     <!--Navbar-->
-    <nav class="w3-sidebar w3-bar w3-block w3-center w3-blue">
-        <a href="#home" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
-            <i class="fa fa-home w3-xxlarge"></i>
-            <p> Tela Principal </p>
-        </a>
-        <a href="#dPessoais" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+    <nav class="w3-sidebar w3-bar w3-block w3-center w3-amber shadow-lg">
+        <div class="nav-item">
+            <a href="#home" class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
+                <i class="fa fa-home w3-xxlarge"></i>
+                <p> Tela Principal </p>
+            </a>
+        </div>
+
+        <a href="#dPessoais" class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
             <i class="fa fa-address-book-o w3-xxlarge"></i>
             <p>Dados Pessoais</p>
         </a>
-        <a href="#formacao" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+        <a href="#formacao" class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
             <i class="fa fa-mortar-board w3-xxlarge"></i>
             <p>Formação Acadêmica</p>
         </a>
-        <a href="#outrasformacoes" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+        <a href="#outrasformacoes" class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
             <i class="fa fa-newspaper-o w3-xxlarge"></i>
             <p>Outas Formções</p>
         </a>
-        <a href="#xpp" class="w3-bar-item w3-button w3-block w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+        <a href="#xpp" class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
             <i class="w3-xxlarge fa fa-briefcase" aria-hidden="true"></i>
             <p>Experiências Profissionais</p>
         </a>
+
     </nav>
 
     <!--Tela de Exibição-->
@@ -45,18 +49,17 @@
 
         <!--Tela Principal-->
         <header class="w3-container w3-padding-32 w3-center title-section" id="home">
-            <h1>
-                <img src="../Resources/Img/enlatados.png" alt="Logo" class="w3-image">
-            </h1>
+            <img src="../Resources/Img/logo-juarez.png" alt="Logo" class="w3-image">
+            <h1 class="titulo-principal">CADASTRO DE CURRICULO</h1>
         </header>
 
         <!--Dados Pessoais-->
         <div class="w3-padding-128 w3-content w3-text-grey card mb-5 shadow" id="dPessoais">
-            <h2 class="card-title w3-text-cyan title-section mb-5">
+            <h2 class="card-title w3-text-dark-grey title-section mb-5">
                 <i class="fa fa-address-book-o w3-xxlarge me-3"></i>
                 Dados Pessoais
             </h2>
-            <form action="" method="post" class="w3-row w3-text-blue w3-margin">
+            <form action="" method="post" class="w3-row w3-text-grey w3-margin">
                 <div class="w3-row w3-section">
                     <div class="w3-col" style="width:11%">
                         <i class="w3-xxlarge fa fa-user center-elements"></i>
@@ -95,7 +98,7 @@
 
                 <div class="w3-row w3 section">
                     <div class="w3-center">
-                        <button type="button" class="btn w3-block w3-margin w3-blue w3-cell w3-round-large" style="width: 90%;">
+                        <button type="button" class="btn w3-block w3-margin w3-amber w3-cell w3-round-large w3-hover-yellow" style="width: 90%;">
                             Atualizar
                         </button>
                     </div>
@@ -105,12 +108,12 @@
 
         <!--Formação Acadêmica-->
         <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="formacao">
-            <h2 class="card-title w3-text-cyan title-section mb-5">
+            <h2 class="card-title w3-text-dark-grey title-section mb-5">
                 <i class="fa fa-mortar-board w3-xxlarge me-3"></i>
                 Formação Acadêmica
             </h2>
             <div class="w3-center">
-                <form action="" method="POST" class="w3-row w3-text-blue w3-margin">
+                <form action="" method="POST" class="w3-row w3-text-grey w3-margin">
                     <div class="w3-row w3-center">
                         <div class="w3-col" style="width: 50%;">
                             <h3>Data Inicial</h3>
@@ -150,7 +153,7 @@
 
                     <div class="w3-row w3-section">
                         <div class="w3-center">
-                            <button class="w3-button w3-block w3-blue w3-cell w3-round-large" style="width: 20%;">
+                            <button class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow" style="width: 20%;">
                                 <i class="w3-xxlarge fa fa-user-plus"></i>
                             </button>
                         </div>
@@ -161,7 +164,7 @@
                 <div class="w3-container mb-5">
                     <table class="w3-table-all w3-centered">
                         <thead>
-                            <tr class="w3-center w3-blue">
+                            <tr class="w3-center w3-amber">
                                 <th>Início</th>
                                 <th>Fim</th>
                                 <th>Descrição</th>
@@ -183,12 +186,12 @@
 
         <!--Outras Formações -->
         <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="outrasformacoes">
-            <h2 class="card-title w3-text-cyan title-section mb-5">
+            <h2 class="card-title w3-text-dark-grey title-section mb-5">
                 <i class="fa fa-newspaper-o w3-xxlarge me-3"></i>
                 Outras Formações
             </h2>
             <div class="w3-center">
-                <form action="" method="POST" class="w3-row w3-text-blue w3-margin">
+                <form action="" method="POST" class="w3-row w3-text-grey w3-margin">
                     <div class="w3-row w3-center">
                         <div class="w3-col" style="width: 50%;">
                             <h3>Data Inicial</h3>
@@ -228,7 +231,7 @@
 
                     <div class="w3-row w3-section">
                         <div class="w3-center">
-                            <button class="w3-button w3-block w3-blue w3-cell w3-round-large" style="width: 20%;">
+                            <button class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow" style="width: 20%;">
                                 <i class="w3-xxlarge fa fa-user-plus"></i>
                             </button>
                         </div>
@@ -239,7 +242,7 @@
                 <div class="w3-container mb-5">
                     <table class="w3-table-all w3-centered">
                         <thead>
-                            <tr class="w3-center w3-blue">
+                            <tr class="w3-center w3-amber">
                                 <th>Início</th>
                                 <th>Fim</th>
                                 <th>Descrição</th>
@@ -261,12 +264,12 @@
 
         <!--Experiências Profissionais-->
         <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="xpp">
-            <h2 class="card-title w3-text-cyan title-section mb-5">
+            <h2 class="card-title w3-text-dark-grey ZFG  title-section mb-5">
                 <i class="w3-xxlarge  fa fa-briefcase me-3" aria-hidden="true"></i>
                 Experiências Profissionais
             </h2>
             <div class="w3-center">
-                <form action="" method="POST" class="w3-row w3-text-blue w3-margin">
+                <form action="" method="POST" class="w3-row w3-text-grey w3-margin">
                     <div class="w3-row w3-center">
                         <div class="w3-col" style="width: 50%;">
                             <h3>Data Inicial</h3>
@@ -315,7 +318,7 @@
 
                     <div class="w3-row w3-section">
                         <div class="w3-center">
-                            <button class="w3-button w3-block w3-blue w3-cell w3-round-large" style="width: 20%;">
+                            <button class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-sand w3-hover-yellow" style="width: 20%;">
                                 <i class="w3-xxlarge fa fa-user-plus"></i>
                             </button>
                         </div>
@@ -326,7 +329,7 @@
                 <div class="w3-container mb-5">
                     <table class="w3-table-all w3-centered">
                         <thead>
-                            <tr class="w3-center w3-blue">
+                            <tr class="w3-center w3-amber">
                                 <th>Início</th>
                                 <th>Fim</th>
                                 <th>Empresa</th>

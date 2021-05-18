@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,7 +12,14 @@
 }
 
 .w3-sidebar {
-    width: 120px;
+    width: 110px;
+    transition: 0.15s ease-in-out;
+}
+
+.w3-sidebar:hover {
+    width: 115px;
+
+
 }
 
 body,
@@ -35,4 +44,26 @@ h6 {
 .title-section {
     font-weight: bold;
     margin: 50px;
+}
+
+button {
+    transition: .8s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+    font-size: 101%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.titulo-principal {
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 80px;
 }
