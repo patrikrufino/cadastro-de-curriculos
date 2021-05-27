@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://localhost/projeto-final-etec/cadastro-de-curriculos/resources/styles/style.css">
+    <link rel="stylesheet" href="http://localhost/cadastro-de-curriculos/Resources/Styles/style.css">
 
     <title>Elatados Juarez</title>
 </head>
 
 <body>
-    <form action="" method="POST" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-display-middle" style="width: 30%;">
+    <form action="" method="POST" class="w3-container w3-card-4 w3-light-grey w3-text-dark-gray w3-margin w3-display-middle" style="width: 30%;">
         <h2 class="w3-center">Primeiro Acesso</h2>
         <div class="w3-row w3-section">
             <div class="w3-col center-elements" style="width: 11%;">
@@ -54,7 +54,7 @@
         <div class="w3-row w3-section">
             <div class="w3-center">
                 <a href="http://localhost/projeto-final-etec/cadastro-de-curriculos/View/login.php">
-                    <button name="btnCadastrar" style="width: 90%;" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large">
+                    <button name="btnCadastrar" style="width: 90%;" class="w3-button w3-block w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large">
                         Cadastrar
                     </button>
                 </a>
