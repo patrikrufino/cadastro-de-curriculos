@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-    include_once 'Controller/Navegacao.php';
+    include_once '/opt/lampp/htdocs/cadastro-de-curriculos/Controller/Navegacao.php';
 ?>
 </body>
 </html>

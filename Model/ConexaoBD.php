@@ -6,7 +6,7 @@
  * 05/2021
 */
 
-class Conexaobd
+class ConexaoBD
 {
 
     private $serverName = "localhost";
@@ -16,6 +16,7 @@ class Conexaobd
 
     public function conectar()
     {
+        /** @var ConexaoBD $conn */
         $conn = new mysqli($this->serverName, $this->userName, $this->password, $this->dbname);
         return $conn;
     }

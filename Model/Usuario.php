@@ -88,7 +88,7 @@ class Usuario
     // Metodo inserir usuário.
     public function inserirBD()
     {
-        require_once './ConexaoBD.php';
+        require_once 'ConexaoBD.php';
 
         $con = new ConexaoBD();
         $conn = $con->conectar();
@@ -118,7 +118,7 @@ class Usuario
     // Metodo carregar usuário.
     public function carregarUsuario($cpf)
     {
-        require_once './ConexaoBD.php';
+        require_once 'ConexaoBD.php';
 
         $con = new ConexaoBD();
         $conn = $con->conectar();
@@ -147,7 +147,7 @@ class Usuario
     // Metodo atualizar banco de dados.
     public function atualizarBD()
     {
-        require_once './ConexaoBD.php';
+        require_once 'ConexaoBD.php';
 
         $con = new ConexaoBD();
         $conn = $con->conectar();
