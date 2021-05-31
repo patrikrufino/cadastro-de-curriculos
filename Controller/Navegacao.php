@@ -1,5 +1,6 @@
 <?php
 
+    // Autentificação
     if(isset($_POST["btnPrimeiroAcesso"]))
     {
         include_once '../View/primeiroAcesso.php';
@@ -47,7 +48,8 @@
                         include_once '../View/primeiroAcesso.php';
                     }
                     else
-                    {       
+                    {
+                        // Atualização Dados Cadastrais
                         if(isset($_POST["btnAtualizar"]))
                         {
                             require_once '../Controller/UsuarioController.php';
@@ -67,6 +69,7 @@
                         }
                         else
                         {
+                            // Formação
                             if(isset($_POST["btnAddFormacao"]))
                             {
                                 require_once '../Controller/FormacaoAcadController.php';
@@ -122,6 +125,7 @@
                                         }
                                         else
                                         {
+                                            // Experiências Profissionais
                                             if(isset($_POST["btnExcluirEP"]))
                                             {
                                                 require_once '../Controller/ExperienciaProfissionalController.php';
@@ -140,6 +144,7 @@
                                             
                                             }
                                             else{
+                                                // Outras Formações
                                                 if(isset($_POST["btnAddOF"]))
                                                 {
                                                     require_once '../Controller/OutrasFormacoesController.php';

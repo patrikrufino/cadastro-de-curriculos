@@ -12,14 +12,16 @@
     <title>Enlatados Juarez</title>
 </head>
 <body class="w3-light-grey">
+
 <?php
-include_once '../Model/Usuario.php';
-include_once '../Controller/FormacaoAcadController.php';
-include_once '../Controller/ExperienciaProfissionalController.php';
-include_once '../Controller/OutrasFormacoesController.php';
-if (!isset($_SESSION)) {
-    session_start();
-}
+    include_once '../Model/Usuario.php';
+    include_once '../Controller/FormacaoAcadController.php';
+    include_once '../Controller/ExperienciaProfissionalController.php';
+    include_once '../Controller/OutrasFormacoesController.php';
+
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 ?>
 
 <!-- Navbar -->
@@ -91,6 +93,7 @@ if (!isset($_SESSION)) {
                            value="<?php echo unserialize($_SESSION['Usuario'])->getDataNascimento(); ?>">
                 </div>
             </div>
+
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
                     <i class="w3-xxlarge fa fa-drivers-license center-elements"></i>
@@ -101,6 +104,7 @@ if (!isset($_SESSION)) {
                            value="<?php echo unserialize($_SESSION['Usuario'])->getCPF(); ?>">
                 </div>
             </div>
+
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
                     <i class="w3-xxlarge fa fa-envelope-o center-elements"></i>
@@ -110,7 +114,6 @@ if (!isset($_SESSION)) {
                            value="<?php echo unserialize($_SESSION['Usuario'])->getEmail(); ?>">
                 </div>
             </div>
-
 
             <div class="w3-row w3-section">
                 <div class="w3-center">
@@ -139,6 +142,7 @@ if (!isset($_SESSION)) {
                     <h3>Data Final</h3>
                 </div>
             </div>
+
             <div class="w3-row w3-section">
                 <div class="w3-row w3-section w3-col" style="width:45%;">
                     <div class="w3-col" style="width:15%;">
@@ -148,8 +152,8 @@ if (!isset($_SESSION)) {
                         <input class="w3-input w3-border w3-round-large" name="txtInicioFA" type="date" placeholder="">
                     </div>
                 </div>
-                <div class="w3-row w3-section w3-rest" style="">
 
+                <div class="w3-row w3-section w3-rest" style="">
                     <div class="w3-col w3-margin-left" style="width:13%;">
                         <i class="w3-xxlarge  fa fa-calendar"></i>
                     </div>
@@ -157,6 +161,7 @@ if (!isset($_SESSION)) {
                         <input class="w3-input w3-border w3-round-large" name="txtFimFA" type="date" placeholder="">
                     </div>
                 </div>
+
                 <div>
                     <div class="w3-row w3-section">
                         <div class="w3-col" style="width:7%;">
@@ -177,253 +182,255 @@ if (!isset($_SESSION)) {
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
         </form>
+
+
+        <!--Tabela de exibição das Formações Acadêmicas-->
+        <div class="w3-container mb-5">
+            <table class="w3-table-all w3-centered">
+                <thead>
+                <tr class="w3-center w3-amber">
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Descrição</th>
+                    <th>Apagar</th>
+                </tr>
+                <thead>
+
+                <?php
+                $fCon = new FormacaoAcadController();
+                $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                if ($results != null)
+
+                    while ($row = $results->fetch_object()) {
+                        echo '<tr>';
+
+                        echo '<td style="width: 18%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 18%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 59%;">' . $row->descricao . '</td>';
+                        echo '<td style="width: 5%;">
+                            <form action="Navegacao.php"  method="post">
+                                <input type="hidden" name="id" value="' . $row->idformacaoAcademica . '">
+                                <button name="btnExcluirFA" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                                    <i class="fa fa-trash"></i> 
+                                </button>
+                            </td>
+                            </form>';
+                        echo '</tr>';
+                    }
+                ?>
+            </table>
+        </div>
     </div>
 
-    <!--Tabela de exibição das Formações Acadêmicas-->
-    <div class="w3-container">
-        <table class="w3-table-all w3-centered">
-            <thead>
-            <tr class="w3-center w3-amber">
-                <th>Início</th>
-                <th>Fim</th>
-                <th>Descrição</th>
-                <th>Apagar</th>
-            </tr>
-            <thead>
+    <!--Outras Formações-->
+    <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="OFormacao">
+        <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+            <i class="fa fa-line-chart w3-xxlarge me-3"></i>
+            Outras Formações
+        </h2>
 
-            <?php
-            $fCon = new FormacaoAcadController();
-            $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
-            if ($results != null)
+        <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
+            <div class="w3-row w3-center">
+                <div class="w3-col" style="width:50%;">
+                    <h3>Data Inicial</h3>
+                </div>
 
-                while ($row = $results->fetch_object()) {
-                    echo '<tr>';
+                <div class="w3-rest">
+                    <h3>Data Final</h3>
+                </div>
+            </div>
 
-                    echo '<td style="width: 18%;">' . $row->inicio . '</td>';
-                    echo '<td style="width: 18%;">' . $row->fim . '</td>';
-                    echo '<td style="width: 59%;">' . $row->descricao . '</td>';
-                    echo '<td style="width: 5%;">
-                        <form action="Navegacao.php"  method="post">
-                            <input type="hidden" name="id" value="' . $row->idformacaoAcademica . '">
-                            <button name="btnExcluirFA" class="w3-button w3-block btn-danger w3-cell w3-round-large">
-                                <i class="fa fa-trash"></i> 
+            <div class="w3-row w3-section">
+                <div class="w3-row w3-section w3-col" style="width:45%;">
+                    <div class="w3-col" style="width:15%;">
+                        <i class="w3-xxlarge fa fa-calendar"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input class="w3-input w3-border w3-round-large" name="txtInicioOF" type="date" placeholder="">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section w3-rest" style="">
+                    <div class="w3-col w3-margin-left" style="width:13%;">
+                        <i class="w3-xxlarge  fa fa-calendar"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input class="w3-input w3-border w3-round-large" name="txtFimOF" type="date" placeholder="">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="w3-row w3-section">
+                        <div class="w3-col" style="width:7%;">
+                            <i class="w3-xxlarge fa fa-align-justify"></i>
+                        </div>
+                        <div class="w3-rest">
+                            <input class="w3-input w3-border w3-round-large" name="txtDescOF" type="text"
+                                   placeholder="Descrição: Ex.: Sistemas para Internert - Centro Paula Souza">
+                        </div>
+                    </div>
+
+                    <div class="w3-row w3-section">
+                        <div class="w3-center" style="">
+                            <button name="btnAddOF"
+                                    class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow"
+                                    style="width: 20%;">
+                                <i class="w3-xxlarge fa fa-user-plus"></i>
                             </button>
-                        </td>
-                        </form>';
-                    echo '</tr>';
-                }
-            ?>
-        </table>
-    </div>
-</div>
-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
-<!--Outras Formações-->
-<div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="OFormacao">
-    <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
-        <i class="fa fa-line-chart w3-xxlarge me-3"></i>
-        Outras Formações
-    </h2>
-    <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
-        <div class="w3-row w3-center">
-            <div class="w3-col" style="width:50%;">
-                <h3>Data Inicial</h3>
-            </div>
-            <div class="w3-rest">
-                <h3>Data Final</h3>
-            </div>
+        <!--Tabela de exibição das Outras Formações-->
+        <div class="w3-container mb-5">
+            <table class="w3-table-all w3-centered">
+                <thead>
+                <tr class="w3-center w3-amber">
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Descrição</th>
+                    <th>Apagar</th>
+                </tr>
+                <thead>
+
+                <?php
+                $fCon = new OutrasFormacoesController();
+                $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                if ($results != null)
+
+                    while ($row = $results->fetch_object()) {
+                        echo '<tr>';
+
+                        echo '<td style="width: 18%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 18%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 59%;">' . $row->descricao . '</td>';
+                        echo '<td style="width: 5%;">
+                            <form action="Navegacao.php"  method="post">
+                            <input type="hidden" name="id" value="' . $row->idoutrasformacoes . '">
+                            <button name="btnExcluirOF" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                            <i class="fa fa-trash"></i> </button></td>
+                            </form>';
+                        echo '</tr>';
+                    }
+                ?>
+            </table>
         </div>
-        <div class="w3-row w3-section">
-            <div class="w3-row w3-section w3-col" style="width:45%;">
-                <div class="w3-col" style="width:15%;">
-                    <i class="w3-xxlarge fa fa-calendar"></i>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border w3-round-large" name="txtInicioOF" type="date" placeholder="">
-                </div>
-            </div>
-            <div class="w3-row w3-section w3-rest" style="">
-
-                <div class="w3-col w3-margin-left" style="width:13%;">
-                    <i class="w3-xxlarge  fa fa-calendar"></i>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border w3-round-large" name="txtFimOF" type="date" placeholder="">
-                </div>
-            </div>
-            <div>
-                <div class="w3-row w3-section">
-                    <div class="w3-col" style="width:7%;">
-                        <i class="w3-xxlarge fa fa-align-justify"></i>
-                    </div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border w3-round-large" name="txtDescOF" type="text"
-                               placeholder="Descrição: Ex.: Sistemas para Internert - Centro Paula Souza">
-                    </div>
-                </div>
-
-                <div class="w3-row w3-section">
-                    <div class="w3-center" style="">
-                        <button name="btnAddOF" class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow"
-                                style="width: 20%;">
-                            <i class="w3-xxlarge fa fa-user-plus"></i>
-                        </button>
-                    </div>
-                </div>
-    </form>
-
-    <!--Tabela de exibição das Outras Formações-->
-    <div class="w3-container mb-5">
-        <table class="w3-table-all w3-centered">
-            <thead>
-            <tr class="w3-center w3-amber">
-                <th>Início</th>
-                <th>Fim</th>
-                <th>Descrição</th>
-                <th>Apagar</th>
-            </tr>
-            <thead>
-
-            <?php
-            $fCon = new OutrasFormacoesController();
-            $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
-            if ($results != null)
-
-                while ($row = $results->fetch_object()) {
-                    echo '<tr>';
-
-                    echo '<td style="width: 18%;">' . $row->inicio . '</td>';
-                    echo '<td style="width: 18%;">' . $row->fim . '</td>';
-                    echo '<td style="width: 59%;">' . $row->descricao . '</td>';
-                    echo '<td style="width: 5%;">
-                        <form action="Navegacao.php"  method="post">
-                        <input type="hidden" name="id" value="' . $row->idoutrasformacoes . '">
-                        <button name="btnExcluirOF" class="w3-button w3-block btn-danger w3-cell w3-round-large">
-                        <i class="fa fa-trash"></i> </button></td>
-                        </form>';
-                    echo '</tr>';
-                }
-            ?>
-
-        </table>
-
-
     </div>
 
-</div>
-</div>
-</div>
 
-<!-- Experiência Profissional -->
-<div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="eProfissional">
-    <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
-        <i class="w3-xxlarge fa fa-briefcase me-3" aria-hidden="true"></i>
-        Experiência Profissional
-    </h2>
-    <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
-        <div class="w3-row w3-center">
-            <div class="w3-col" style="width:50%;">
-                <h3>Data Inicial</h3>
+    <!-- Experiência Profissional -->
+    <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="eProfissional">
+        <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+            <i class="w3-xxlarge fa fa-briefcase me-3" aria-hidden="true"></i>
+            Experiência Profissional
+        </h2>
 
+        <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
+            <div class="w3-row w3-center">
+                <div class="w3-col" style="width:50%;">
+                    <h3>Data Inicial</h3>
+                </div>
+                <div class="w3-res" style="">
+                    <h3>Data Final</h3>
+                </div>
             </div>
-            <div class="w3-res" style="">
-                <h3>Data Final</h3>
 
+            <div class="w3-row w3-section">
+                <div class="w3-row w3-section w3-col" style="width:45%;">
+                    <div class="w3-col" style="width:15%;">
+                        <i class="w3-xxlarge fa fa-calendar"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input class="w3-input w3-border w3-round-large" name="txtInicioEP" type="date" placeholder="">
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section w3-rest" style="">
+                    <div class="w3-col w3-margin-left" style="width:13%;">
+                        <i class="w3-xxlarge  fa fa-calendar"></i>
+                    </div>
+                    <div class="w3-rest">
+                        <input class="w3-input w3-border w3-round-large" name="txtFimEP" type="date" placeholder="">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="w3-row w3-section">
+                        <div class="w3-col" style="width:7%;">
+                            <i class="w3-xxlarge fa fa-align-justify"></i>
+                        </div>
+                        <div class="w3-rest">
+                            <input class="w3-input w3-border w3-round-large" name="txtEmpEP" type="text"
+                                   placeholder="Centro Paula Souza">
+                        </div>
+                    </div>
+
+                    <div class="w3-row w3-section">
+                        <div class="w3-col" style="width:7%;">
+                            <i class="w3-xxlarge fa fa-align-justify"></i>
+                        </div>
+                        <div class="w3-rest">
+                            <input class="w3-input w3-border w3-round-large" name="txtDescEP" type="text"
+                                   placeholder="Descrição: Ex.: Técnico em Desenvolvimento de Sistemas - Desenvolvimento de Páginas WEB">
+                        </div>
+                    </div>
+
+                    <div class="w3-row w3-section">
+                        <div class="w3-center" style="">
+                            <button name="btnAddEP"
+                                    class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-sand w3-hover-yellow"
+                                    style="width: 20%;">
+                                <i class="w3-xxlarge fa fa-user-plus"></i>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </form>
+
+        <!-- Tabela Experiência Profissional -->
+        <div class="w3-container mb-5">
+            <table class="w3-table-all w3-centered">
+                <thead>
+                <tr class="w3-center w3-amber">
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Empresa</th>
+                    <th>Descrição</th>
+                    <th>Apagar</th>
+                </tr>
+                <thead>
+
+                <?php
+                $ePro = new ExperienciaProfissionalController();
+                $results = $ePro->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                if ($results != null)
+
+                    while ($row = $results->fetch_object()) {
+                        echo '<tr>';
+                        echo '<td style="width: 15%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 15%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 10%;">' . $row->empresa . '</td>';
+                        echo '<td style="width: 50%;">' . $row->descricao . '</td>';
+                        echo '<td style="width: 5%;">
+                            <form action="Navegacao.php"  method="post">
+                            <input type="hidden" name="idEP" value="' . $row->idexperienciaprofissional . '">
+                            <button name="btnExcluirEP" class="w3-button w3-block  btn-danger w3-cell w3-round-large">
+                            <i class="fa fa-trash"></i> </button></td>
+                            </form>';
+                        echo '</tr>';
+                    }
+                ?>
+            </table>
         </div>
-        <div class="w3-row w3-section">
-            <div class="w3-row w3-section w3-col" style="width:45%;">
-                <div class="w3-col" style="width:15%;">
-                    <i class="w3-xxlarge fa fa-calendar"></i>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border w3-round-large" name="txtInicioEP" type="date" placeholder="">
-                </div>
-            </div>
-            <div class="w3-row w3-section w3-rest" style="">
-
-                <div class="w3-col w3-margin-left" style="width:13%;">
-                    <i class="w3-xxlarge  fa fa-calendar"></i>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border w3-round-large" name="txtFimEP" type="date" placeholder="">
-                </div>
-            </div>
-            <div>
-                <div class="w3-row w3-section">
-                    <div class="w3-col" style="width:7%;">
-                        <i class="w3-xxlarge fa fa-align-justify"></i>
-                    </div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border w3-round-large" name="txtEmpEP" type="text"
-                               placeholder="Centro Paula Souza">
-                    </div>
-                </div>
-                <div class="w3-row w3-section">
-                    <div class="w3-col" style="width:7%;">
-                        <i class="w3-xxlarge fa fa-align-justify"></i>
-                    </div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border w3-round-large" name="txtDescEP" type="text"
-                               placeholder="Descrição: Ex.: Técnico em Desenvolvimento de Sistemas - Desenvolvimento de Páginas WEB">
-                    </div>
-                </div>
-
-                <div class="w3-row w3-section">
-                    <div class="w3-center" style="">
-                        <button name="btnAddEP" class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-sand w3-hover-yellow"
-                                style="width: 20%;">
-                            <i class="w3-xxlarge fa fa-user-plus"></i>
-
-                        </button>
-                    </div>
-                </div>
-    </form>
-
-    <!-- Tabela Experiência Profissional -->
-    <div class="w3-container">
-        <table class="w3-table-all w3-centered">
-            <thead>
-            <tr class="w3-center w3-amber">
-                <th>Início</th>
-                <th>Fim</th>
-                <th>Empresa</th>
-                <th>Descrição</th>
-                <th>Apagar</th>
-            </tr>
-            <thead>
-
-            <?php
-            $ePro = new ExperienciaProfissionalController();
-            $results = $ePro->gerarLista(unserialize($_SESSION['Usuario'])->getID());
-            if ($results != null)
-
-                while ($row = $results->fetch_object()) {
-                    echo '<tr>';
-                    echo '<td style="width: 15%;">' . $row->inicio . '</td>';
-                    echo '<td style="width: 15%;">' . $row->fim . '</td>';
-                    echo '<td style="width: 10%;">' . $row->empresa . '</td>';
-                    echo '<td style="width: 50%;">' . $row->descricao . '</td>';
-                    echo '<td style="width: 5%;">
-                        <form action="Navegacao.php"  method="post">
-                        <input type="hidden" name="idEP" value="' . $row->idexperienciaprofissional . '">
-                        <button name="btnExcluirEP" class="w3-button w3-block  btn-danger w3-cell w3-round-large">
-                        <i class="fa fa-trash"></i> </button></td>
-                        </form>';
-                    echo '</tr>';
-                }
-            ?>
-
-
-        </table>
-
-
     </div>
-
 </div>
-
-
 </body>
 </html>
 
