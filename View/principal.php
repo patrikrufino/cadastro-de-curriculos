@@ -21,60 +21,59 @@ if (!isset($_SESSION)) {
     session_start();
 }
 ?>
-<nav class="w3-sidebar w3-bar-block w3-center w3-blue ">
+
+<!-- Navbar -->
+<nav class="w3-sidebar w3-bar w3-block w3-center w3-amber shadow-lg">
     <a href="#home"
-       class="w3-bar-item w3-button w3-block n w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-home w3-xxlarge"></i>
-        <p>HOME</p>
+        <p> Tela Principal </p>
     </a>
     <a href="#dPessoais"
-       class="w3-bar-item w3-button w3-block n w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-address-book-o w3-xxlarge"></i>
         <p>Dados Pessoais</p>
     </a>
     <a href="#formacao"
-       class="w3-bar-item w3-button w3-block n w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-mortar-board w3-xxlarge"></i>
-        <p>Formação</p>
+        <p>Formação Acadêmica</p>
     </a>
     <a href="#eProfissional"
-       class="w3-bar-item w3-button w3-block n w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-briefcase  w3-xxlarge"></i>
         <p>Experiências Profissionais</p>
     </a>
     <a href="#oFormacao"
-       class="w3-bar-item w3-button w3-block n w3-cell w3-hover-light-grey w3-hover-text-cyan w3-text-light-grey">
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-line-chart w3-xxlarge"></i>
         <p>Outras Formações</p>
     </a>
-
 </nav>
 
-<div class="w3-padding-large" id="main">
-    <!--Incial -->
-    <header class="w3-container w3-padding-32 w3-center " id="home">
-        <h1>
-            <img src="../Resources/Img/Enlatados.png" alt="Logo" class="w3-image logo">
-            </br>
-        </h1>
-        <a class="w3-text-cyan" href="http://www.linkedin.com/in/patrikalanrufino">Designed by PatrikRufino</a>
-        <br>
-        <h1 class="w3-text-cyan">
+<!-- Tela de Exibição -->
+<div class="w3-padding-large exibicao" id="main">
+    <!-- Tela Principal -->
+    <header class="w3-container w3-padding-32 w3-center title-section" id="home">
+        <img src="../Resources/Img/Enlatados.png" alt="Logo" class="w3-image logo">
+        <h1 class="titulo-principal w3-text-dark-grey">
             SISTEMA DE CURRICULOS
         </h1>
     </header>
-    <!--Inicial -->
 
-    <div class="w3-padding-128 w3-content w3-text-grey" id="dPessoais">
-        <h2 class="w3-text-cyan">Dados Pessoais</h2>
+    <!-- Dados Pessoais -->
+    <div class="w3-padding-128 w3-content w3-text-grey card mb-5 shadow" id="dPessoais">
+        <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+            <i class="fa fa-address-book-o w3-xxlarge me-3 w3-center"></i>
+            Dados Pessoais
+        </h2>
 
-        <form action="Navegacao.php" method="post" class=" w3-row  w3-light-grey w3-text-blue w3-margin"
-              style="width: 70%;">
+        <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
             <input class="w3-input w3-border w3-round-large" name="txtID" type="hidden"
                    value="<?php echo unserialize($_SESSION['Usuario'])->getID(); ?>">
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
-                    <i class="w3-xxlarge fa fa-user"></i>
+                    <i class="w3-xxlarge fa fa-user center-elements"></i>
                 </div>
                 <div class="w3-rest">
                     <input class="w3-input w3-border w3-round-large" name="txtNome" type="text"
@@ -85,7 +84,7 @@ if (!isset($_SESSION)) {
 
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
-                    <i class="w3-xxlarge fa fa-calendar"></i>
+                    <i class="w3-xxlarge fa fa-calendar center-elements"></i>
                 </div>
                 <div class="w3-rest">
                     <input class="w3-input w3-border w3-round-large" name="txtData" type="date" placeholder=""
@@ -94,7 +93,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
-                    <i class="w3-xxlarge fa fa-drivers-license"></i>
+                    <i class="w3-xxlarge fa fa-drivers-license center-elements"></i>
                 </div>
                 <div class="w3-rest">
                     <input class="w3-input w3-border w3-round-large" name="txtCPF" type="text"
@@ -104,7 +103,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="w3-row w3-section">
                 <div class="w3-col" style="width:11%;">
-                    <i class="w3-xxlarge fa fa-envelope-o"></i>
+                    <i class="w3-xxlarge fa fa-envelope-o center-elements"></i>
                 </div>
                 <div class="w3-rest">
                     <input class="w3-input w3-border w3-round-large" name="txtEmail" type="text" placeholder="Email"
@@ -114,8 +113,9 @@ if (!isset($_SESSION)) {
 
 
             <div class="w3-row w3-section">
-                <div class="w3-center" style="">
-                    <button name="btnAtualizar" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large"
+                <div class="w3-center">
+                    <button name="btnAtualizar"
+                            class="btn w3-block w3-margin w3-amber w3-cell w3-round-large w3-hover-yellow"
                             style="width: 90%;">Atualizar
                     </button>
                 </div>
@@ -123,19 +123,20 @@ if (!isset($_SESSION)) {
         </form>
     </div>
 
-    <!--Formações-->
-    <div class="w3-padding-128 w3-content w3-text-grey" id="formacao">
-        <h2 class="w3-text-cyan">Formação</h2>
+    <!-- Formação Acadêmica-->
+    <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="formacao">
+        <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+            <i class="fa fa-mortar-board w3-xxlarge me-3"></i>
+            Formação Acadêmica
+        </h2>
 
-
-        <form action="Navegacao.php" method="post" class=" w3-row  w3-light-grey w3-text-blue w3-margin"
-              style="width: 70%;">
+        <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
             <div class="w3-row w3-center">
                 <div class="w3-col" style="width:50%;">
-                    Data Inicial
+                    <h3>Data Inicial</h3>
                 </div>
                 <div class="w3-res" style="">
-                    Data Final
+                    <h3>Data Final</h3>
                 </div>
             </div>
             <div class="w3-row w3-section">
@@ -169,69 +170,68 @@ if (!isset($_SESSION)) {
 
                     <div class="w3-row w3-section">
                         <div class="w3-center" style="">
-                            <button name="btnAddFormacao" class="w3-button w3-block  w3-blue w3-cell w3-round-large"
+                            <button name="btnAddFormacao"
+                                    class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow"
                                     style="width: 20%;">
                                 <i class="w3-xxlarge fa fa-user-plus"></i>
-
                             </button>
                         </div>
                     </div>
         </form>
+    </div>
 
-        <div class="w3-container">
-            <table class="w3-table-all w3-centered">
-                <thead>
-                <tr class="w3-center w3-blue">
+    <!--Tabela de exibição das Formações Acadêmicas-->
+    <div class="w3-container">
+        <table class="w3-table-all w3-centered">
+            <thead>
+            <tr class="w3-center w3-amber">
+                <th>Início</th>
+                <th>Fim</th>
+                <th>Descrição</th>
+                <th>Apagar</th>
+            </tr>
+            <thead>
 
-                    <th>Início</th>
-                    <th>Fim</th>
-                    <th>Descrição</th>
-                    <th>Apagar</th>
-                </tr>
-                <thead>
+            <?php
+            $fCon = new FormacaoAcadController();
+            $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+            if ($results != null)
 
-                <?php
-                $fCon = new FormacaoAcadController();
-                $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
-                if ($results != null)
+                while ($row = $results->fetch_object()) {
+                    echo '<tr>';
 
-                    while ($row = $results->fetch_object()) {
-                        echo '<tr>';
-
-                        echo '<td style="width: 10%;">' . $row->inicio . '</td>';
-                        echo '<td style="width: 10%;">' . $row->fim . '</td>';
-                        echo '<td style="width: 65%;">' . $row->descricao . '</td>';
-                        echo '<td style="width: 5%;">
+                    echo '<td style="width: 18%;">' . $row->inicio . '</td>';
+                    echo '<td style="width: 18%;">' . $row->fim . '</td>';
+                    echo '<td style="width: 59%;">' . $row->descricao . '</td>';
+                    echo '<td style="width: 5%;">
                         <form action="Navegacao.php"  method="post">
-                        <input type="hidden" name="id" value="' . $row->idformacaoAcademica . '">
-                        <button name="btnExcluirFA" class="w3-button w3-block  w3-blue w3-cell w3-round-large">
-                        <i class="fa fa-user-times"></i> </button></td>
+                            <input type="hidden" name="id" value="' . $row->idformacaoAcademica . '">
+                            <button name="btnExcluirFA" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                                <i class="fa fa-trash"></i> 
+                            </button>
+                        </td>
                         </form>';
-                        echo '</tr>';
-                    }
-                ?>
-
-
-            </table>
-
-
-        </div>
-
+                    echo '</tr>';
+                }
+            ?>
+        </table>
     </div>
 </div>
-<br> <br> <br>
+</div>
 
 <!--Outras Formações-->
-<div class="w3-padding-128 w3-content w3-text-grey" id="OFormacao">
-    <h2 class="w3-text-cyan">Outras Formações</h2>
-    <form action="Navegacao.php" method="post" class=" w3-row  w3-light-grey w3-text-blue w3-margin"
-          style="width: 70%;">
+<div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="OFormacao">
+    <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+        <i class="fa fa-line-chart w3-xxlarge me-3"></i>
+        Outras Formações
+    </h2>
+    <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
         <div class="w3-row w3-center">
             <div class="w3-col" style="width:50%;">
-                Data Inicial
+                <h3>Data Inicial</h3>
             </div>
-            <div class="w3-res" style="">
-                Data Final
+            <div class="w3-rest">
+                <h3>Data Final</h3>
             </div>
         </div>
         <div class="w3-row w3-section">
@@ -265,20 +265,19 @@ if (!isset($_SESSION)) {
 
                 <div class="w3-row w3-section">
                     <div class="w3-center" style="">
-                        <button name="btnAddOF" class="w3-button w3-block  w3-blue w3-cell w3-round-large"
+                        <button name="btnAddOF" class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-yellow"
                                 style="width: 20%;">
                             <i class="w3-xxlarge fa fa-user-plus"></i>
-
                         </button>
                     </div>
                 </div>
     </form>
 
-    <div class="w3-container">
+    <!--Tabela de exibição das Outras Formações-->
+    <div class="w3-container mb-5">
         <table class="w3-table-all w3-centered">
             <thead>
-            <tr class="w3-center w3-blue">
-
+            <tr class="w3-center w3-amber">
                 <th>Início</th>
                 <th>Fim</th>
                 <th>Descrição</th>
@@ -294,19 +293,18 @@ if (!isset($_SESSION)) {
                 while ($row = $results->fetch_object()) {
                     echo '<tr>';
 
-                    echo '<td style="width: 10%;">' . $row->inicio . '</td>';
-                    echo '<td style="width: 10%;">' . $row->fim . '</td>';
-                    echo '<td style="width: 65%;">' . $row->descricao . '</td>';
+                    echo '<td style="width: 18%;">' . $row->inicio . '</td>';
+                    echo '<td style="width: 18%;">' . $row->fim . '</td>';
+                    echo '<td style="width: 59%;">' . $row->descricao . '</td>';
                     echo '<td style="width: 5%;">
                         <form action="Navegacao.php"  method="post">
                         <input type="hidden" name="id" value="' . $row->idoutrasformacoes . '">
-                        <button name="btnExcluirOF" class="w3-button w3-block  w3-blue w3-cell w3-round-large">
-                        <i class="fa fa-user-times"></i> </button></td>
+                        <button name="btnExcluirOF" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                        <i class="fa fa-trash"></i> </button></td>
                         </form>';
                     echo '</tr>';
                 }
             ?>
-
 
         </table>
 
@@ -315,18 +313,23 @@ if (!isset($_SESSION)) {
 
 </div>
 </div>
+</div>
 
-<br> <br> <br>
-<div class="w3-padding-128 w3-content w3-text-grey" id="eProfissional">
-    <h2 class="w3-text-cyan">Experiência Profissional</h2>
-    <form action="Navegacao.php" method="post" class=" w3-row  w3-light-grey w3-text-blue w3-margin"
-          style="width: 70%;">
+<!-- Experiência Profissional -->
+<div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="eProfissional">
+    <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
+        <i class="w3-xxlarge fa fa-briefcase me-3" aria-hidden="true"></i>
+        Experiência Profissional
+    </h2>
+    <form action="Navegacao.php" method="post" class="w3-row w3-text-grey w3-margin">
         <div class="w3-row w3-center">
             <div class="w3-col" style="width:50%;">
-                Data Inicial
+                <h3>Data Inicial</h3>
+
             </div>
             <div class="w3-res" style="">
-                Data Final
+                <h3>Data Final</h3>
+
             </div>
         </div>
         <div class="w3-row w3-section">
@@ -369,7 +372,7 @@ if (!isset($_SESSION)) {
 
                 <div class="w3-row w3-section">
                     <div class="w3-center" style="">
-                        <button name="btnAddEP" class="w3-button w3-block  w3-blue w3-cell w3-round-large"
+                        <button name="btnAddEP" class="btn w3-button w3-block w3-amber w3-cell w3-round-large w3-hover-sand w3-hover-yellow"
                                 style="width: 20%;">
                             <i class="w3-xxlarge fa fa-user-plus"></i>
 
@@ -378,10 +381,11 @@ if (!isset($_SESSION)) {
                 </div>
     </form>
 
+    <!-- Tabela Experiência Profissional -->
     <div class="w3-container">
         <table class="w3-table-all w3-centered">
             <thead>
-            <tr class="w3-center w3-blue">
+            <tr class="w3-center w3-amber">
                 <th>Início</th>
                 <th>Fim</th>
                 <th>Empresa</th>
@@ -397,15 +401,15 @@ if (!isset($_SESSION)) {
 
                 while ($row = $results->fetch_object()) {
                     echo '<tr>';
-                    echo '<td style="width: 10%;">' . $row->inicio . '</td>';
-                    echo '<td style="width: 10%;">' . $row->fim . '</td>';
+                    echo '<td style="width: 15%;">' . $row->inicio . '</td>';
+                    echo '<td style="width: 15%;">' . $row->fim . '</td>';
                     echo '<td style="width: 10%;">' . $row->empresa . '</td>';
-                    echo '<td style="width: 65%;">' . $row->descricao . '</td>';
+                    echo '<td style="width: 50%;">' . $row->descricao . '</td>';
                     echo '<td style="width: 5%;">
                         <form action="Navegacao.php"  method="post">
                         <input type="hidden" name="idEP" value="' . $row->idexperienciaprofissional . '">
-                        <button name="btnExcluirEP" class="w3-button w3-block  w3-blue w3-cell w3-round-large">
-                        <i class="fa fa-user-times"></i> </button></td>
+                        <button name="btnExcluirEP" class="w3-button w3-block  btn-danger w3-cell w3-round-large">
+                        <i class="fa fa-trash"></i> </button></td>
                         </form>';
                     echo '</tr>';
                 }
@@ -418,10 +422,8 @@ if (!isset($_SESSION)) {
     </div>
 
 </div>
-</div>
 
 
-</div>
 </body>
 </html>
 

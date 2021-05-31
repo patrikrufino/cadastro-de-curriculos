@@ -11,7 +11,7 @@
 </head>
 <body>
 <form action="Controller/Navegacao.php" method="post"
-      class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-display-middle" style="width: 30%;">
+      class="w3-container w3-card-4 w3-light-grey w3-text-dark-grey w3-margin w3-display-middle" style="width: 30%;">
     <input type="hidden" name="nome_form" value="frmLogin"/>
 
     <h2 class="w3-center">Login</h2>
@@ -32,12 +32,12 @@
 
     <div class="w3-row w3-section">
         <div class="w3-half" style="">
-            <button name="btnLogin" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large"
+            <button name="btnLogin" class="w3-button w3-block w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
                     style="width: 90%;">Entrar
             </button>
         </div>
         <div class="w3-half">
-            <button name="btnPrimeiroAcesso" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large"
+            <button name="btnPrimeiroAcesso" class="w3-button w3-block w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
                     style="width: 90%;">Primeiro Acesso?
             </button>
         </div>
