@@ -14,14 +14,14 @@
 <body class="w3-light-grey">
 
 <?php
-    include_once '../Model/Usuario.php';
-    include_once '../Controller/FormacaoAcadController.php';
-    include_once '../Controller/ExperienciaProfissionalController.php';
-    include_once '../Controller/OutrasFormacoesController.php';
+include_once '../Model/Usuario.php';
+include_once '../Controller/FormacaoAcadController.php';
+include_once '../Controller/ExperienciaProfissionalController.php';
+include_once '../Controller/OutrasFormacoesController.php';
 
-    if (!isset($_SESSION)) {
-        session_start();
-    }
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!-- Navbar -->
@@ -213,7 +213,7 @@
                         echo '<td style="width: 5%;">
                             <form action="Navegacao.php"  method="post">
                                 <input type="hidden" name="id" value="' . $row->idformacaoAcademica . '">
-                                <button name="btnExcluirFA" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                                <button name="btnExcluirFA" class="btn w3-block btn-danger w3-cell w3-round-large">
                                     <i class="fa fa-trash"></i> 
                                 </button>
                             </td>
@@ -312,7 +312,7 @@
                         echo '<td style="width: 5%;">
                             <form action="Navegacao.php"  method="post">
                             <input type="hidden" name="id" value="' . $row->idoutrasformacoes . '">
-                            <button name="btnExcluirOF" class="w3-button w3-block btn-danger w3-cell w3-round-large">
+                            <button name="btnExcluirOF" class="btn w3-block btn-danger w3-cell w3-round-large">
                             <i class="fa fa-trash"></i> </button></td>
                             </form>';
                         echo '</tr>';
@@ -421,7 +421,7 @@
                         echo '<td style="width: 5%;">
                             <form action="Navegacao.php"  method="post">
                             <input type="hidden" name="idEP" value="' . $row->idexperienciaprofissional . '">
-                            <button name="btnExcluirEP" class="w3-button w3-block  btn-danger w3-cell w3-round-large">
+                            <button name="btnExcluirEP" class="btn w3-block  btn-danger w3-cell w3-round-large">
                             <i class="fa fa-trash"></i> </button></td>
                             </form>';
                         echo '</tr>';

@@ -128,7 +128,7 @@ class ExperienciaProfissional
             die("Connection failed: " . $conn->connect_error);
         } 
 
-        $sql = "SELECT * FROM experienciaProfissional WHERE idusuario =  '".$idusuario."'" ;
+        $sql = "SELECT * FROM experienciaprofissional WHERE idusuario =  '".$idusuario."'" ;
         $re = $conn->query($sql);
         $conn->close();
         return $re;
