@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/teste/Resources/Styles/style.css">
+    <link rel="stylesheet" href="http://localhost/cadastro-de-curriculos/Resources/Styles/style.css">
     <title>Enlatados Juarez</title>
 </head>
 <body class="w3-light-grey">
@@ -226,7 +226,7 @@ if (!isset($_SESSION)) {
     </div>
 
     <!--Outras Formações-->
-    <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="OFormacao">
+    <div class="w3-padding-128 w3-content w3-text-grey card shadow mb-5" id="oFormacao">
         <h2 class="card-title w3-text-dark-grey title-section mb-5 w3-center">
             <i class="fa fa-line-chart w3-xxlarge me-3"></i>
             Outras Formações
