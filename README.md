@@ -1,3 +1,4 @@
+![](https://github.com/patrikrufino/cadastro-de-curriculos/blob/main/Resources/Img/Enlatados.png?raw=true)
 # Cadastro de Currículos | Enlatados Juarez
 Sistema Web para cadastros de currículos online. Criado utilizando PHP em arquitetura MVC.
 
