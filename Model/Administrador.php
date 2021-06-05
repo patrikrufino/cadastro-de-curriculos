@@ -116,7 +116,7 @@ class Administrador
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $sql = "SELECT idusuario, nome FROM usuario;" ;
+        $sql = "SELECT idadministrador, nome, cpf FROM administrador;" ;
         $re = $conn->query($sql);
         $conn->close();
         return $re;
