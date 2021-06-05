@@ -54,12 +54,10 @@ button:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     font-size: 101%;
     cursor: pointer;
-    font-weight: bold;
 }
 
 a:hover {
     cursor: pointer;
-    font-weight: 600;
 }
 
 .titulo-principal {
