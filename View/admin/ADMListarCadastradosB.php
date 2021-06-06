@@ -47,8 +47,8 @@
                         echo '<td style="width: 10%;">
                                 <form action="Navegacao.php"  method="POST">
                                 <input type="hidden" name="idVisualizar" value="'. $row->idusuario .'">
-                                <button name="btnListarCurriculo" class="btn w3-block btn-danger w3-cell w3-round-large">
-                                    <i class="fa fa-eye"></i> 
+                                <button name="btnListarCurriculo" class="btn w3-block btn-outline-info w3-cell w3-round-large">
+                                    <i class="w3-xlarge fa fa-eye"></i> 
                                 </button>
                                 </td>';
                         echo '</tr>';
@@ -64,7 +64,7 @@
                 <div>
                     <button name="btnVoltar"
                             class="w3-button w3-block w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
-                            style="width: 90%;">
+                            style="width: 10%;">
                         Voltar
                     </button>
                 </div>

@@ -58,6 +58,7 @@ if (!isset($_SESSION)) {
 <div class="w3-padding-large exibicao" id="main">
     <!-- Tela Principal -->
     <header class="w3-container w3-center title-section" id="home">
+        <img src="../Resources/Img/Enlatados.png" alt="Logo" class="w3-image logo mb-5">
         <h1 class="titulo-principal w3-text-dark-grey">
             Currículo de
             <?php
@@ -201,6 +202,15 @@ if (!isset($_SESSION)) {
             </table>
         </div>
     </div>
+    <form action="Navegacao.php" method="post">
+        <div class="w3-padding-128 container w3-content center-elements">
+            <button name="btnVoltarListaC"
+                    class="w3-button w3-block w3-padding-16 w3-amber w3-hover-yellow w3-cell w3-round-large"
+                    style="width: 10%;">
+                Voltar
+            </button>
+        </div>
+    </form>
 </div>
 </body>
 </html>

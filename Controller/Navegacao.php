@@ -159,6 +159,10 @@ if (isset($_POST["btnPrimeiroAcesso"])) {
                                                                     if ($fController->gerarCurriculo($_POST['idVisualizar']) == true) {
                                                                         include_once '../View/admin/ADMCurriculo.php';
                                                                     }
+                                                                } else {
+                                                                    if (isset($_POST["btnVoltarListaC"])) {
+                                                                        include_once '../View/admin/ADMListarCadastradosB.php';
+                                                                    }
                                                                 }
                                                             }
                                                         }
