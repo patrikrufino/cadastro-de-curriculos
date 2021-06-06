@@ -46,9 +46,19 @@ class UsuarioController{
         {
             return false;
         }
-        
-        
+    }
+
+    public function gerarLista()
+    {
+        require_once '../Model/Usuario.php';
+        $u = new Usuario();
+        return $results = $u->listaCadastrados();
+    }
+
+    public function gerarCurriculo($idusuario)
+    {
+        require_once '../Model/Usuario.php';
+        $u = new Usuario();
+        return $results = $u->listaCurriculo($idusuario);
     }
 }
-
-?>

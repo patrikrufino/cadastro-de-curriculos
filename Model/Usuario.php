@@ -139,11 +139,39 @@ class Usuario
         if ($conn->query($sql) === TRUE) {
             $conn->close();
             return TRUE;
-           
         } else {
             $conn->close();
             return FALSE;
         }
     }
+
+    public function listaCadastrados()
+    {
+        require_once 'ConexaoBD.php';
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT idusuario, nome, cpf, email, datanascimento FROM usuario";
+        $re = $conn->query($sql);
+        $conn->close();
+        return $re;
+    }
+
+    public function listaCurriculo()
+    {
+        require_once 'ConexaoBD.php';
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT idusuario, nome, cpf, email, datanascimento FROM usuario WHERE idusuario = '".$this->id."'";
+        $re = $conn->query($sql);
+        $conn->close();
+        return $re;
+    }
+
+
 }
-?>

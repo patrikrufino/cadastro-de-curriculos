@@ -39,6 +39,13 @@ if (!isset($_SESSION)) {
             <br>
             <i class="fa fa-address-book-o w3-xxlarge"></i><br>
             <p class="w3-xlarge">Usuários<br>
+                ADM Cadastrados</p>
+        </button>
+        <button name="btnListarCadastradosB" class="w3-button w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
+                style="">
+            <br>
+            <i class="fa fa-address-book-o w3-xxlarge"></i><br>
+            <p class="w3-xlarge">Usuários<br>
                 Cadastrados</p>
         </button>
 </header>

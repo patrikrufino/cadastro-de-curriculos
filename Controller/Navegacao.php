@@ -148,6 +148,16 @@ if (isset($_POST["btnPrimeiroAcesso"])) {
                                                         if(isset($_POST["btnVoltar"]))
                                                         {
                                                             include_once '../View/admin/ADMPrincipal.php';
+                                                        } else {
+                                                            if(isset($_POST["btnListarCadastradosB"]))
+                                                            {
+                                                                include_once '../View/admin/ADMListarCadastradosB.php';
+                                                            } else {
+                                                                if(isset($_POST["btnListarCurriculo"]))
+                                                                {
+                                                                    include_once '../View/admin/ADMCurriculo.php';
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }

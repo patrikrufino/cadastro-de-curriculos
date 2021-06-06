@@ -13,7 +13,6 @@ class FormacaoAcadController{
         $formacao->setDescricao($descricao); 
         $formacao->setIdUsuario($idusuario);    
         $r = $formacao->inserirBD();
-   
         return $r;     
     }
     public function remover($id) {
