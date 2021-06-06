@@ -50,7 +50,7 @@ if (!isset($_SESSION)) {
     </a>
     <a href="#eProfissional"
        class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
-        <i class="fa fa-briefcase  w3-xxlarge"></i>
+        <i class="fa fa-briefcase w3-xxlarge"></i>
         <p>Experiências Profissionais</p>
     </a>
 </nav>
@@ -59,7 +59,15 @@ if (!isset($_SESSION)) {
     <!-- Tela Principal -->
     <header class="w3-container w3-center title-section" id="home">
         <h1 class="titulo-principal w3-text-dark-grey">
-            CURRICULO
+            Currículo de
+            <?php
+            $usuario = new UsuarioController();
+            $results = $usuario->gerarCurriculo($_POST['idVisualizar']);
+            if ($results != null) {
+                $data = ($results->fetch_object());
+                echo "$data->nome";
+            }
+            ?>
         </h1>
     </header>
 
@@ -71,10 +79,30 @@ if (!isset($_SESSION)) {
         </h2>
 
         <div class="card-body container">
-            <h3 class="container m-3">Id:</h3>
-            <h3 class="container m-3">Nome:</h3>
-            <h3 class="container m-3">Data de Nascimento:</h3>
-            <h3 class="container m-3">Email:</h3>
+            <table class="w3-table-all w3-centered">
+                <thead>
+                <tr class="w3-center w3-amber">
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Data de Nascimento</th>
+                </tr>
+                </thead>
+                <?php
+                $usuario = new UsuarioController();
+                $results = $usuario->gerarCurriculo($_POST['idVisualizar']);
+                if ($results != null)
+
+                    while ($row = $results->fetch_object()) {
+                        echo '<tr>';
+                        echo '<td style="width: 24%;">' . $row->nome . '</td>';
+                        echo '<td style="width: 25%;">' . $row->cpf . '</td>';
+                        echo '<td style="width: 25%;">' . $row->email . '</td>';
+                        echo '<td style="width: 25%;">' . $row->dataNascimento . '</td>';
+                    }
+                ?>
+
+            </table>
         </div>
     </div>
     <!-- Formação Acadêmica-->
@@ -93,19 +121,15 @@ if (!isset($_SESSION)) {
                     <th>Descrição</th>
                 </tr>
                 <thead>
-
                 <?php
                 $fCon = new FormacaoAcadController();
-                $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                $results = $fCon->gerarLista($_POST['idVisualizar']);
                 if ($results != null)
-
                     while ($row = $results->fetch_object()) {
                         echo '<tr>';
-
-                        echo '<td style="width: 18%;">' . $row->inicio . '</td>';
-                        echo '<td style="width: 18%;">' . $row->fim . '</td>';
-                        echo '<td style="width: 64%;">' . $row->descricao . '</td>';
-                        echo '</tr>';
+                        echo '<td style="width: 20%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 20%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 60%;">' . $row->descricao . '</td>';
                     }
                 ?>
             </table>
@@ -128,18 +152,16 @@ if (!isset($_SESSION)) {
                     <th>Descrição</th>
                 </tr>
                 <thead>
-
                 <?php
                 $fCon = new OutrasFormacoesController();
-                $results = $fCon->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                $results = $fCon->gerarLista($_POST['idVisualizar']);
                 if ($results != null)
 
                     while ($row = $results->fetch_object()) {
                         echo '<tr>';
-                        echo '<td style="width: 18%;">' . $row->inicio . '</td>';
-                        echo '<td style="width: 18%;">' . $row->fim . '</td>';
-                        echo '<td style="width: 64%;">' . $row->descricao . '</td>';
-                        echo '</tr>';
+                        echo '<td style="width: 20%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 20%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 60%;">' . $row->descricao . '</td>';
                     }
                 ?>
             </table>
@@ -163,19 +185,17 @@ if (!isset($_SESSION)) {
                     <th>Descrição</th>
                 </tr>
                 <thead>
-
                 <?php
-                $ePro = new ExperienciaProfissionalController();
-                $results = $ePro->gerarLista(unserialize($_SESSION['Usuario'])->getID());
+                $fCon = new ExperienciaProfissionalController();
+                $results = $fCon->gerarLista($_POST['idVisualizar']);
                 if ($results != null)
 
                     while ($row = $results->fetch_object()) {
                         echo '<tr>';
-                        echo '<td style="width: 15%;">' . $row->inicio . '</td>';
-                        echo '<td style="width: 15%;">' . $row->fim . '</td>';
-                        echo '<td style="width: 10%;">' . $row->empresa . '</td>';
-                        echo '<td style="width: 55%;">' . $row->descricao . '</td>';
-                        echo '</tr>';
+                        echo '<td style="width: 20%;">' . $row->inicio . '</td>';
+                        echo '<td style="width: 20%;">' . $row->fim . '</td>';
+                        echo '<td style="width: 30%;">' . $row->empresa . '</td>';
+                        echo '<td style="width: 30%;">' . $row->descricao . '</td>';
                     }
                 ?>
             </table>

@@ -41,15 +41,15 @@ if (!isset($_SESSION)) {
         <i class="fa fa-mortar-board w3-xxlarge"></i>
         <p>Formação Acadêmica</p>
     </a>
-    <a href="#eProfissional"
-       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
-        <i class="fa fa-briefcase  w3-xxlarge"></i>
-        <p>Experiências Profissionais</p>
-    </a>
     <a href="#oFormacao"
        class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
         <i class="fa fa-line-chart w3-xxlarge"></i>
         <p>Outras Formações</p>
+    </a>
+    <a href="#eProfissional"
+       class="w3-bar-item w3-button w3-block w3-cell w3-hover-sand w3-hover-text-orange w3-text-sand w3-text-dark-grey">
+        <i class="fa fa-briefcase w3-xxlarge"></i>
+        <p>Experiências Profissionais</p>
     </a>
 </nav>
 

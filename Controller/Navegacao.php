@@ -132,30 +132,33 @@ if (isset($_POST["btnPrimeiroAcesso"])) {
                                                     include_once '../View/principal.php';
                                                 } else {
                                                     include_once 'View/login.php';
-                                                } if(isset($_POST["btnADM"]))
-                                                {
+                                                }
+                                                if (isset($_POST["btnADM"])) {
                                                     include_once '../View/admin/ADMLogin.php';
-                                                } if(isset($_POST["btnLoginADM"]))
-                                                {
+                                                }
+                                                if (isset($_POST["btnLoginADM"])) {
                                                     require_once '../Controller/AdministradorController.php';
                                                     $aController = new AdministradorController();
                                                     include_once '../View/admin/ADMPrincipal.php';
                                                 } else {
-                                                    if(isset($_POST["btnListarCadastrados"]))
-                                                    {
+                                                    if (isset($_POST["btnListarCadastrados"])) {
                                                         include_once '../View/admin/ADMListarCadastrados.php';
                                                     } else {
-                                                        if(isset($_POST["btnVoltar"]))
-                                                        {
+                                                        if (isset($_POST["btnVoltar"])) {
                                                             include_once '../View/admin/ADMPrincipal.php';
                                                         } else {
-                                                            if(isset($_POST["btnListarCadastradosB"]))
-                                                            {
+                                                            if (isset($_POST["btnListarCadastradosB"])) {
                                                                 include_once '../View/admin/ADMListarCadastradosB.php';
                                                             } else {
-                                                                if(isset($_POST["btnListarCurriculo"]))
-                                                                {
-                                                                    include_once '../View/admin/ADMCurriculo.php';
+                                                                if (isset($_POST["btnListarCurriculo"])) {
+                                                                    require_once '../Controller/UsuarioController.php';
+                                                                    include_once '../Model/Usuario.php';
+
+                                                                    $fController = new UsuarioController();
+
+                                                                    if ($fController->gerarCurriculo($_POST['idVisualizar']) == true) {
+                                                                        include_once '../View/admin/ADMCurriculo.php';
+                                                                    }
                                                                 }
                                                             }
                                                         }

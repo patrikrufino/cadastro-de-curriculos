@@ -159,19 +159,18 @@ class Usuario
         return $re;
     }
 
-    public function listaCurriculo()
+    public function listaCurriculo($idusuario)
     {
         require_once 'ConexaoBD.php';
+
         $con = new ConexaoBD();
         $conn = $con->conectar();
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if ($conn->connect_error){
+            die("Connection failed: ".$conn->connect_error);
         }
-        $sql = "SELECT idusuario, nome, cpf, email, datanascimento FROM usuario WHERE idusuario = '".$this->id."'";
+        $sql = "SELECT * FROM usuario WHERE idusuario = '".$idusuario."';";
         $re = $conn->query($sql);
         $conn->close();
         return $re;
     }
-
-
 }

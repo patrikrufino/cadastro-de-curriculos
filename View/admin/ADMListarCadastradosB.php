@@ -19,11 +19,10 @@
     {
         session_start();
     }
-
-
 ?>
 
 <header class="w3-container w3-padding-32 w3-center ">
+    <img src="../Resources/Img/Enlatados.png" alt="Logo" class="w3-image logo mb-5">
     <h1 class="w3-text-dark-gray w3-panel w3-amber w3-round-large pt-5 pb-5">
         <b>Lista de Usuários Cadastrados no Sistema</b>
     </h1>
@@ -45,8 +44,9 @@
                         echo '<tr>';
                         echo '<td style="width: 1%;">'.$row->idusuario.'</td>';
                         echo '<td style="width: 90%;">'.$row->nome.'</td>';
-                        echo '<td style="width: 10%;"><form action="Navegacao.php"  method="post">
-                                <input type="hidden" name="id" value="' . $row->idusuario . '">
+                        echo '<td style="width: 10%;">
+                                <form action="Navegacao.php"  method="POST">
+                                <input type="hidden" name="idVisualizar" value="'. $row->idusuario .'">
                                 <button name="btnListarCurriculo" class="btn w3-block btn-danger w3-cell w3-round-large">
                                     <i class="fa fa-eye"></i> 
                                 </button>

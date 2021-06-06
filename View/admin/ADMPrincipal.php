@@ -22,32 +22,36 @@ if (!isset($_SESSION)) {
 <div class="w3-padding-large" id="main">
 </div>
 <header class="w3-container w3-padding-32 w3-center " id="home">
+        <img src="../Resources/Img/Enlatados.png" alt="Logo" class="w3-image logo mb-5">
     <br>
     <h1 class="w3-text-dark-grey w3-panel w3-amber w3-round-large">
         ADMINISTRAÇÃO
     </h1>
-    <h1 class="w3-text-dark-grey w3-panel w3-amber w3-round-large">
+    <h1 class="w3-text-dark-grey w3-panel w3-amber w3-round-large mb-5">
         SISTEMA DE CURRICULOS
     </h1>
-    <form action="Navegacao.php" method="post"
-          class="w3-container w3-light-grey w3-text-blue w3-margin w3-center" style="">
-        <input type="hidden" name="nome_form" value="frmLoginADM"/>
-
-
-        <button name="btnListarCadastrados" class="w3-button w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
-                style="">
-            <br>
-            <i class="fa fa-address-book-o w3-xxlarge"></i><br>
-            <p class="w3-xlarge">Usuários<br>
-                ADM Cadastrados</p>
-        </button>
-        <button name="btnListarCadastradosB" class="w3-button w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large"
-                style="">
-            <br>
-            <i class="fa fa-address-book-o w3-xxlarge"></i><br>
-            <p class="w3-xlarge">Usuários<br>
-                Cadastrados</p>
-        </button>
+    <div class="container">
+        <form action="Navegacao.php" method="post"
+              class="w3-container w3-light-grey w3-text-blue w3-margin w3-center" style="">
+            <input type="hidden" name="nome_form" value="frmLoginADM"/>
+            <button name="btnListarCadastrados"
+                    class="w3-button w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large mt-5"
+                    style="width: 400px">
+                <br>
+                <i class="fa fa-address-book-o w3-xxlarge"></i><br>
+                <p class="w3-xlarge">Usuários<br>
+                    ADM Cadastrados</p>
+            </button>
+            <button name="btnListarCadastradosB"
+                    class="w3-button w3-margin w3-amber w3-hover-yellow w3-cell w3-round-large mt-5"
+                    style="width: 400px">
+                <br>
+                <i class="fa fa-address-book-o w3-xxlarge"></i><br>
+                <p class="w3-xlarge">Currículos<br>
+                    Cadastrados</p>
+            </button>
+        </form>
+    </div>
 </header>
 </body>
 </html>
