@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/58515198/120219410-94b42a80-c211-11eb-
 
 ### Vídeo do Painel do Administrador
 
-https://user-images.githubusercontent.com/58515198/120906398-84e08000-c62f-11eb-93cd-397d4b1619cb.mp4
+https://user-images.githubusercontent.com/58515198/120935273-54a0ec00-c6d8-11eb-8924-286056d24878.mp4
 
 ## Tecnologias
 - HTML5
