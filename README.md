@@ -17,3 +17,9 @@ https://user-images.githubusercontent.com/58515198/120935273-54a0ec00-c6d8-11eb-
 - Bootstrap
 - W3-CSS
 - PHP
+
+## Autores
+
+- Patrik 
+- Isabela
+- Arcenio 
